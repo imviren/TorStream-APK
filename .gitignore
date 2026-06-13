@@ -1,0 +1,18 @@
+# Android build artifacts
+*.apk
+!TorStream*.apk
+
+# Keep only TorStream APKs
+*!TorStream.apk
+!TorStream-v*.apk
+
+# Build folders
+app/build/
+build/
+*.iml
+.gradle/
+local.properties
+
+# OS files
+.DS_Store
+Thumbs.db
