@@ -3,30 +3,38 @@ Public download host for the TorStream Android APK
 
 ## 📱 Latest Version
 
-### v2.0 - Background Download Fix (Latest)
+### v2.1 - Web Stream Media Player Chooser (Latest)
+- **File**: `TorStream.apk` (also archived as `TorStream-v2.1-webstream-chooser.apk`)
+- **Size**: 64.2 MB
+- **Build Date**: July 12, 2026
+- **Features**:
+  - ✅ "Play in Player" button on every torrent details screen — opens Android's system media-player chooser (VLC, MX Player, system player, Kodi, …) and hands the Webtor stream URL to the picked player
+  - ✅ Webtor "Web Stream" button still available (in-app WebView player)
+  - ✅ Background downloads with persistent progress notification (carried over from v2.0)
+  - ✅ Pause / Resume / Stop controls from the notification
+  - ✅ Automatic stall detection and recovery
+  - ✅ Battery optimization exemption support
+
+### v2.0 - Background Download Fix
 - **File**: `TorStream-v2-background-fix.apk`
-- **Size**: 66.8 MB
-- **Build Date**: June 13, 2026
+- **Backup Branch**: `backup-stable-v2`
 - **Features**:
   - ✅ Background downloads now work when app is minimized
   - ✅ Persistent notification with download progress
   - ✅ Pause/Resume/Stop controls from notification
   - ✅ Automatic stall detection and recovery
   - ✅ Battery optimization exemption support
-  - ✅ Completion notification with Play action
 
 ### v1.0 - Stable Release (Archived)
-- **File**: `TorStream.apk`
-- **Size**: 61.2 MB
-- **Build Date**: June 10, 2026
-- **Status**: ⚠️ Known issue: Downloads stop when app is backgrounded
+- **File**: `TorStream.apk` (on `backup-stable-v1` branch)
 - **Backup Branch**: `backup-stable-v1`
+- **Status**: ⚠️ Known issue: Downloads stop when app is backgrounded
 
 ## 🔽 Download Instructions
 
-1. **For New Users**: Download `TorStream-v2-background-fix.apk`
-2. **Existing Users**: Update to v2.0 for background download support
-3. **Need to Rollback**: If v2.0 has issues, download from `backup-stable-v1` branch
+1. **For New Users**: Download `TorStream.apk` from the `main` branch (always the latest)
+2. **Existing Users**: Update to v2.1 for the new "Play in Player" feature
+3. **Need to Rollback**: See `ROLLBACK.md` or download from one of the backup branches below
 
 ## 🔄 Installation
 
@@ -45,8 +53,11 @@ Public download host for the TorStream Android APK
 
 ## 🐛 Known Issues
 
+### v2.1
+- None reported yet — testing in progress
+
 ### v2.0
-- Testing in progress - report issues on GitHub
+- No known issues
 
 ### v1.0
 - ❌ Downloads stop when switching apps
@@ -57,23 +68,29 @@ Public download host for the TorStream Android APK
 
 | Version | Date | Size | Status | Notes |
 |---------|------|------|--------|-------|
-| v2.0 | 2026-06-13 | 66.8 MB | 🟡 Testing | Background download fix |
+| v2.1 | 2026-07-12 | 64.2 MB | 🟡 Testing | "Play in Player" chooser |
+| v2.0 | 2026-06-13 | 66.8 MB | 🟢 Stable  | Background download fix |
 | v1.0 | 2026-06-10 | 61.2 MB | 🟠 Deprecated | Initial release |
 
 ## 🔧 Rollback Instructions
 
-If v2.0 has issues, you can rollback to v1.0:
+If v2.1 has issues, you can rollback to v2.0 (or v1.0):
 
 1. Go to GitHub repository
-2. Switch to branch `backup-stable-v1`
-3. Download `TorStream.apk`
-4. Uninstall v2.0 and install v1.0
+2. Switch to the relevant branch:
+   - `backup-stable-v2` for the v2.0 background-fix release
+   - `backup-stable-v1` for the v1.0 initial release
+3. Download `TorStream.apk` from that branch
+4. Uninstall the current version and install the older one
+
+For full rollback instructions see `ROLLBACK.md`.
 
 ## 📝 Build Information
 
 - **Min SDK**: Android 7.0 (API 24)
-- **Target SDK**: Android 14 (API 34)
+- **Target SDK**: Android 15 (API 35)
 - **Architecture**: Universal (ARM + x86)
+- **Signing**: Release keystore (`torstream-release.jks`)
 
 ## 📞 Support
 

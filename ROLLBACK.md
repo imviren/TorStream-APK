@@ -1,60 +1,64 @@
 # Rollback Instructions - TorStream APK
 
-## If v2.0 Has Issues
+The `main` branch always carries the latest release. Every prior release
+is preserved on its own long-lived branch so you can roll back without
+losing history.
 
-If you experience problems with the new v2.0 APK with background download support, you can easily rollback to the stable v1.0 version.
+| Version | Date | Branch | Notes |
+|---------|------|--------|-------|
+| v2.1 (latest) | 2026-07-12 | `main` | "Play in Player" chooser |
+| v2.0 | 2026-06-13 | `backup-stable-v2` | Background download fix |
+| v1.0 | 2026-06-10 | `backup-stable-v1` | Initial release |
 
-## Quick Rollback Guide
+## If v2.1 Has Issues
 
-### Option 1: Download from Backup Branch
+### Option 1: Download from Backup Branch (easiest)
 
-1. **Go to GitHub Repository**
-   - Visit: https://github.com/imviren/TorStream-APK
+1. Visit the GitHub repository: https://github.com/imviren/TorStream-APK
+2. Click the branch selector (it currently shows `main`) and pick
+   `backup-stable-v2` (or `backup-stable-v1` if you want the very first
+   release).
+   - Or open the branch directly:
+     - https://github.com/imviren/TorStream-APK/tree/backup-stable-v2
+     - https://github.com/imviren/TorStream-APK/tree/backup-stable-v1
+3. Click on `TorStream.apk`, then "Download".
+4. Uninstall the current version from your device and install the
+   downloaded APK.
+5. Grant the usual permissions.
 
-2. **Switch to Backup Branch**
-   - Click on the branch selector (usually shows "main")
-   - Select `backup-stable-v1` branch
-   - Or go directly to: https://github.com/imviren/TorStream-APK/tree/backup-stable-v1
-
-3. **Download Stable APK**
-   - Click on `TorStream.apk`
-   - Click "Download" button
-   - File size: 61.2 MB
-
-4. **Install v1.0**
-   - Uninstall v2.0 from your device
-   - Install the downloaded v1.0 APK
-   - Grant necessary permissions
-
-### Option 2: Use Git Commands (Developers)
+### Option 2: Use Git Commands (developers)
 
 ```bash
 # Clone the repository
 git clone https://github.com/imviren/TorStream-APK.git
 cd TorStream-APK
 
-# Checkout backup branch
-git checkout backup-stable-v1
+# Roll back to v2.0 (background download fix)
+git checkout backup-stable-v2
+# The stable APK is at TorStream.apk
 
-# The stable APK is available as TorStream.apk
+# Or roll back all the way to v1.0 (initial release)
+git checkout backup-stable-v1
 ```
 
 ## Comparison Table
 
-| Feature | v2.0 (New) | v1.0 (Stable) |
-|---------|-----------|---------------|
-| Background Downloads | ✅ Yes | ❌ No |
-| Progress Notification | ✅ Yes | ❌ No |
-| Pause/Resume Controls | ✅ Yes | ❌ No |
-| Auto Stall Recovery | ✅ Yes | ❌ No |
-| Battery Optimization | ✅ Requests Exemption | ❌ None |
-| File Size | 66.8 MB | 61.2 MB |
-| Status | 🟡 Testing | 🟢 Stable |
+| Feature | v2.1 (Latest) | v2.0 (Stable) | v1.0 (Initial) |
+|---------|---------------|---------------|----------------|
+| "Play in Player" chooser | ✅ Yes | ❌ No | ❌ No |
+| Background downloads | ✅ Yes | ✅ Yes | ❌ No |
+| Progress notification | ✅ Yes | ✅ Yes | ❌ No |
+| Pause/Resume controls | ✅ Yes | ✅ Yes | ❌ No |
+| Auto stall recovery | ✅ Yes | ✅ Yes | ❌ No |
+| Battery optimization | ✅ Yes | ✅ Yes | ❌ No |
+| File size | 64.2 MB | 66.8 MB | 61.2 MB |
+| Status | 🟡 Testing | 🟢 Stable | 🟠 Deprecated |
 
 ## When to Rollback
 
-Consider rolling back to v1.0 if you experience:
+Consider rolling back to v2.0 if you experience on v2.1:
 - App crashes or freezes
+- "Play in Player" chooser doesn't appear
 - Downloads not starting
 - Battery drain issues
 - Notification problems
@@ -62,20 +66,20 @@ Consider rolling back to v1.0 if you experience:
 
 ## Reporting Issues
 
-Before rolling back, consider reporting the issue:
+Before rolling back, please report the issue:
 1. Go to: https://github.com/imviren/TorStream-APK/issues
 2. Click "New Issue"
-3. Describe the problem
-4. Include your Android version
-5. Steps to reproduce
+3. Describe the problem, your Android version, and the version you were on
+4. Steps to reproduce
 
-## Re-upgrading to v2.0
+## Re-upgrading to v2.1
 
-Once issues are fixed in v2.0:
-1. Uninstall v1.0
-2. Download v2.0 from main branch
-3. Install and grant permissions
-4. Your previous downloads should still be available
+Once the issue is fixed:
+1. Uninstall the rollback version
+2. Switch back to the `main` branch on GitHub
+3. Download the new `TorStream.apk`
+4. Install and grant permissions
+5. Your previous downloads should still be available
 
 ## Backup Your Downloads
 
@@ -88,4 +92,4 @@ Before any version change:
 ## Support
 
 - Issues: https://github.com/imviren/TorStream-APK/issues
-- Branch: https://github.com/imviren/TorStream-APK/tree/backup-stable-v1
+- Branches: https://github.com/imviren/TorStream-APK/branches
